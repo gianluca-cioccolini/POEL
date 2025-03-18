@@ -9,17 +9,28 @@
     <h1 style="text-align: center;">Focusing Robot Open-Ended Reinforcement Learning Through Users&rsquo; Purposes</h1>
     <h3 style="text-align: center;"><strong>Emilio Cartoni, Gianluca Cioccolini, Gianluca Baldassarre</strong></h3>
     <p style="text-align: center;">Laboratory of Embodied Natural and Artificial Intelligence (LENAI),<br />Institute of Cognitive Sciences and Technologies (ISTC),<br />National Research Council (CNR),<br />Rome, Italy<br />{emilio.cartoni, gianluca.cioccolini, gianluca.baldassarre}@istc.cnr.it</p>
-    <p style="text-align: center;"><strong><span style="color: #800000;">RLDM 2025</span></strong></p>
+    <p style="text-align: center;"><strong><span style="color: #800000;">Multi-disciplinary Conference on Reinforcement Learning and Decision Making (RLDM), 2025</span></strong></p>
     <p style="text-align: center;"><a title="arXiv" href="https://arxiv.org/abs/2503.12579" target="_blank">arXiv</a> &nbsp;&nbsp;&nbsp; <a title="Code" href="https://github.com/gianluca-cioccolini/test_website" target="_blank">Code</a></p>
     <h2 style="text-align: center;">Abstract</h2>
     <blockquote>
     <blockquote>
     <blockquote><blockquote>
     <p style="text-align: justify;">Open-Ended Learning (OEL) autonomous robots can acquire new skills and knowledge through direct interaction with their environment, relying on mechanisms such as intrinsic motivations and self-generated goals to guide learning processes. OEL robots are highly relevant for applications as they can autonomously leverage acquired knowledge to perform tasks beneficial to human users in unstructured environments, addressing challenges unforeseen at design time. However, OEL robots face a significant limitation: their openness may lead them to waste time learning information that is irrelevant to tasks desired by specific users. Here, we propose a solution called &lsquo;Purpose-Directed Open-Ended Learning&rsquo; (POEL), based on the novel concept of &lsquo;purpose&rsquo; introduced in previous work. A purpose specifies what users want the robot to achieve. The key insight of this work is that purpose can focus OEL on learning self-generated classes of tasks that, while unknown during autonomous learning (as typical in OEL), involve objects relevant to the purpose. This concept is operationalised in a novel robot architecture capable of receiving a human purpose through speech-to-text, analysing the scene to identify objects, and using a Large Language Model to reason about which objects are purpose-relevant. These objects are then used to bias OEL exploration towards their spatial proximity and to self-generate rewards that favour interactions with them. The solution is tested in a simulated scenario where a camera-arm-gripper robot interacts freely with purpose-related and distractor objects. For the first time, the results demonstrate the potential advantages of purpose-focused OEL over state-of-the-art OEL methods, enabling robots to handle unstructured environments while steering their learning toward knowledge acquisition relevant to users.</p>
-    <h2 style="text-align: center;">Architecture</h2>
+    <h2 style="text-align: center;">Method</h2>
     <p style="text-align: center;">
         <img src="images/architettura.png" alt="Architectures POEL" width="900">
     </p>
+    <p>&nbsp;</p>
+    <ol>
+    <li style="text-align: justify;"><strong>User Input:</strong> the user communicates the Purpose to the robot through speech, and this is converted to text via Speech-to-Text.</li>
+    <li style="text-align: justify;"><strong> Visual Interpretation</strong>: the visual module processes the simulated environment to identify objects and their locations.</li>
+    <li style="text-align: justify;"><strong> LLM Processing</strong>: the LLM receives the user&rsquo;s Purpose and the visual description of the scenario from the visual module, i.e. the list of the detected objects. The LLM interprets the Purpose and determines which objects are relevant to achieving it, giving as output a subset of the objects detected in the scene. This list of objects biases the robot&rsquo;s interactions to favour these objects, guiding the agent to focus on tasks relevant for the Purpose.</li>
+    <li style="text-align: justify;"><strong>Initialization</strong>: based on the LLM&rsquo;s interpretation, the robotic arm&rsquo;s initial position is set near a relevant object. This strategic initialization increases the likelihood of the agent interacting with objects pertinent to the user&rsquo;s Purpose, enhancing learning efficiency and later task performance.</li>
+    <li style="text-align: justify;"><strong>Purpose Proximity and Lifting rewards</strong>: using the visual module&rsquo;s ability to determine the position of the target objects, both observations coming from the environment and from imagined rollouts internal to LEXA are analysed by the Proximity and Lifting Purpose models and are assigned rewards. This enhances the interactions with Purpose-related objects and the learning of Purpose-relevant tasks.</li>
+    </ol>
+    <p style="text-align: justify;">&nbsp;</p>
+    <p>&nbsp;</p>
+
 
     <h2 style="text-align: center;">Results</h2>
     <p style="text-align: center;">
