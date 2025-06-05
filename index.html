@@ -10,7 +10,23 @@
     <h3 style="text-align: center;"><strong>Emilio Cartoni, Gianluca Cioccolini, Gianluca Baldassarre</strong></h3>
     <p style="text-align: center;">Laboratory of Embodied Natural and Artificial Intelligence (LENAI),<br />Institute of Cognitive Sciences and Technologies (ISTC),<br />National Research Council (CNR),<br />Rome, Italy<br />{emilio.cartoni, gianluca.cioccolini, gianluca.baldassarre}@istc.cnr.it</p>
     <p style="text-align: center;"><strong><span style="color: #800000;">Multi-disciplinary Conference on Reinforcement Learning and Decision Making (RLDM), 2025</span></strong></p>
-    <p style="text-align: center;"><a title="arXiv" href="https://arxiv.org/abs/2503.12579" target="_blank">arXiv</a> &nbsp;&nbsp;&nbsp; <a title="Code" href="https://github.com/gianluca-cioccolini/test_website" target="_blank">Code</a></p>
+    <p style="text-align: center;"><a title="arXiv" href="https://arxiv.org/abs/2503.12579" target="_blank">arXiv</a> &nbsp;&nbsp;&nbsp; </p>
+    
+    <div style="text-align: center;">
+        <video width="720" controls style="display: inline-block;">
+            <source src="videos/SupplementaryVideo.mp4" type="video/mp4">
+        </video>
+    </div>
+    </blockquote> </blockquote>
+    </blockquote>
+    <blockquote>
+    <p>&nbsp;</p>
+    <p style="text-align: center;">&nbsp;</p>
+    <p style="text-align: center;">&nbsp;</p>
+    <p>&nbsp;</p>
+    </blockquote>
+    </blockquote>
+
     <h2 style="text-align: center;">Abstract</h2>
     <blockquote>
     <blockquote>
@@ -31,36 +47,68 @@
     <p style="text-align: justify;">&nbsp;</p>
     <p>&nbsp;</p>
 
+    <h2 style="text-align: center;">Environments</h2>
+
+    <h3 style="text-align: center;">1. IIWA Environment</h3>
+    <p style="text-align: center;">
+        <img src="images/goal_reach_blue.png" alt="IIWA environment" width="400">
+        <img src="images/goal_push_green.png" alt="Push green cube goal" width="400">
+        <img src="images/goal_pick_and_place_blue_cube.png" alt="Pick and place blue cube goal" width="400">
+    </p>
+
+    <h3 style="text-align: center;">2. Franka Environment</h3>
+    <p style="text-align: center;">
+        <img src="images/goal_reach_banana.png" alt="Franka environment" width="400">
+        <img src="images/goal_broccoli_in_the_sink.png" alt="Push green cube goal" width="400">
+        <img src="images/goal_broccoli_in_the_bowl.png" alt="Pick and place blue cube goal" width="400">
+    </p>
+    <p>&nbsp;</p>
+    <blockquote>
+    <blockquote>
+    <blockquote><blockquote>
+
 
     <h2 style="text-align: center;">Results</h2>
+    <h3 style="text-align: center;">IIWA Environment Results</h3>
     <p style="text-align: center;">
-        <img src="images/Reach_blue_object.png" alt="Reach blue object" width="400">
-        <img src="images/Push_blue_object.png" alt="Push blue object" width="400">
-        <img src="images/Pick_and_place_blue_object.png" alt="Pick and place blue object" width="400">
+        <img src="images/Reach blue object_molt.png" alt="Reach blue object" width="400">
+        <img src="images/Push blue object_molt.png" alt="Push blue object" width="400">
+        <img src="images/Pick and place blue object_molt.png" alt="Pick and place blue object" width="400">
     </p>
     <p style="text-align: center;">
         <img src="images/Reach_green_object.png" alt="Reach green object" width="400">
-        <img src="images/Push_green_object.png" alt="Push green object" width="400">
-        <img src="images/Pick_and_place_green_object.png" alt="Pick and place green object" width="400">
+        <img src="images/Push green object_molt.png" alt="Push green object" width="400">
+        <img src="images/Pick and place green object_molt.png" alt="Pick and place green object" width="400">
     </p>
 
-    </blockquote>
-    </blockquote>
+    <h3 style="text-align: center;">Franka Environment Results</h3>
     <p style="text-align: center;">
-        <video width="720" controls>
-            <source src="videos/SupplementaryVideo.mp4" type="video/mp4">
-        </video>
+        <img src="images/Reach banana_molt.png" alt="Reach banana" width="300">
+        <img src="images/Push banana_molt.png" alt="Push banana" width="300">
+        <img src="images/Banana in the sink_molt.png" alt="Banana in the sink" width="300">
+        <img src="images/Banana in the bowl_molt.png" alt="Banana in the bowl" width="300">
+    </p>
+    <p style="text-align: center;">
+        <img src="images/Reach broccoli_molt.png" alt="Reach broccoli" width="300">
+        <img src="images/Push Broccoli_molt.png" alt="Push broccoli" width="300">
+        <img src="images/Broccoli in the sink_molt.png" alt="Broccoli in the sink" width="300">
+        <img src="images/Broccoli in the bowl_molt.png" alt="Broccoli in the bowl" width="300">
+    </p>
+
+    <h3 style="text-align: center;">Performance Analysis</h3>
+    <p style="text-align: justify;">
+        We evaluated the architecture in two simulated environments, each featuring two robotic arms (Kuka LBR iiwa R800 and Franka Emika Panda) with various objects placed in front of them.
+        Our algorithm significantly outperforms both LEXA and ALAN* in goals where the object being manipulated is directly correlated with the defined purpose. 
+        While the POEL systems lost some performance on the unrelated tasks, as expected, their focus enhances the performance on purpose-related tasks.
+        Overall, these results highlight the advantage of incorporating purpose-driven exploration and targeted skill acquisition into OEL processes.
     </p>
 
 
-    </blockquote> </blockquote>
-    </blockquote>
-    <blockquote>
-    <p>&nbsp;</p>
-    <p style="text-align: center;">&nbsp;</p>
-    <p style="text-align: center;">&nbsp;</p>
-    <p>&nbsp;</p>
     </blockquote>
     </blockquote>
+    
+
+
+    
 </body>
 </html>
